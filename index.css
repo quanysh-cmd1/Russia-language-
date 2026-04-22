@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  /* Global scaling for desktop screens to simulate 75% zoom */
+  @media (min-width: 1024px) {
+    body {
+      zoom: 0.75;
+      -moz-transform: scale(0.75);
+      -moz-transform-origin: top center;
+      background-color: #f8fafc; /* Ensure background fills the gaps if any */
+    }
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slideIn {
+  animation: slideIn 0.4s ease-out forwards;
+}
